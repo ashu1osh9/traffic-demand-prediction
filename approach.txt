@@ -105,8 +105,8 @@ score = max(0, 100 * r2_score(actual, predicted))
 
 Model Performance:
 Validation results achieved:
-- Ensemble R2 Score: 0.9509
-- Final Hackathon Validation Score: 95.09
+- Ensemble R2 Score: 0.9505
+- Final Hackathon Validation Score: 95.05
 
 Additional Metrics:
 - MAE (Mean Absolute Error)
