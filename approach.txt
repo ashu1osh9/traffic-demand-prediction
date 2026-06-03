@@ -1,0 +1,138 @@
+Traffic Demand Prediction Hackathon
+
+Project Overview:
+The objective of this project was to build a machine learning system capable of predicting traffic demand using multiple 
+geographical, environmental, and road-related features. The solution focuses on understanding travel demand patterns and 
+predicting future traffic demand accurately.
+
+Dataset Description:
+The dataset contained information related to:
+- Geographical locations
+- Road types
+- Number of lanes
+- Presence of large vehicles
+- Landmarks
+- Weather conditions
+- Temperature
+- Timestamp and day information
+
+Files Provided:
+- train.csv
+- test.csv
+- sample_submission.csv
+
+The target column to predict was:
+- demand
+
+Data Preprocessing:
+Several preprocessing steps were performed before model training:
+
+1. Missing Value Handling
+- Missing categorical values were filled using "Unknown"
+- Numerical missing values were filled using median values
+
+2. Data Cleaning
+- Checked dataset structure and datatypes
+- Verified null values and feature consistency
+
+3. Encoding Techniques
+Label Encoding was applied to categorical columns:
+- geohash
+- RoadType
+- LargeVehicles
+- Landmarks
+- Weather
+- time_bucket
+
+Feature Engineering:
+To improve model performance, several additional features were created from the existing dataset.
+
+Time-Based Features:
+- hour
+- minute
+- is_weekend
+- rush_hour
+- night
+- time_bucket
+
+Interaction Features:
+- lane_temp
+- temp_hour
+
+Geographical Features:
+Geohash mean demand encoding was applied to capture location-based traffic patterns.
+
+Exploratory Data Analysis:
+EDA was performed to understand:
+- Traffic demand distribution
+- Weather impact on demand
+- RoadType impact on demand
+- Relationship between traffic demand and different features
+
+Visualizations were created using:
+- Histogram plots
+- Box plots
+- Feature importance graphs
+
+Machine Learning Models Used:
+Three advanced gradient boosting models were trained:
+
+1. CatBoost Regressor
+- Handles categorical patterns efficiently
+- Strong performance on tabular datasets
+
+2. LightGBM Regressor
+- Fast training and efficient boosting
+- Good generalization performance
+
+3. XGBoost Regressor
+- Powerful boosting framework
+- Captures complex feature interactions
+
+Ensemble Learning:
+Instead of using a single model, predictions from all three models were combined using weighted averaging to improve 
+robustness and overall prediction quality.
+
+Ensemble Weights:
+- CatBoost: 45%
+- LightGBM: 35%
+- XGBoost: 20%
+
+Evaluation Metric:
+The official evaluation metric provided in the hackathon was:
+
+score = max(0, 100 * r2_score(actual, predicted))
+
+Model Performance:
+Validation results achieved:
+- Ensemble R2 Score: 0.9509
+- Final Hackathon Validation Score: 95.09
+
+Additional Metrics:
+- MAE (Mean Absolute Error)
+- RMSE (Root Mean Squared Error)
+
+Cross Validation:
+K-Fold Cross Validation was also performed to evaluate model stability and reduce overfitting risk.
+
+Libraries and Tools Used:
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- CatBoost
+- LightGBM
+- XGBoost
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+Files Submitted:
+- notebook.ipynb
+- submission.csv
+- approach.txt
+
+Conclusion:
+The final ensemble solution successfully captured temporal, geographical, and environmental traffic patterns. Advanced 
+feature engineering combined with ensemble learning significantly improved prediction accuracy and produced a strong 
+validation score for the hackathon leaderboard.
