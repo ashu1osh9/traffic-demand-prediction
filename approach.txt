@@ -1,4 +1,4 @@
-Traffic Demand Prediction Hackathon
+Traffic Demand Prediction 
 
 Project Overview:
 The objective of this project was to build a machine learning system capable of predicting traffic demand using multiple 
@@ -55,6 +55,14 @@ Time-Based Features:
 - night
 - time_bucket
 
+Additional Advanced Features:
+- hour_sin
+- hour_cos
+- temp_x_hour
+- lanes_x_hour
+- rush_temp
+- geo_freq
+
 Interaction Features:
 - lane_temp
 - temp_hour
@@ -77,9 +85,11 @@ Visualizations were created using:
 Machine Learning Models Used:
 Three advanced gradient boosting models were trained:
 
-1. CatBoost Regressor
-- Handles categorical patterns efficiently
-- Strong performance on tabular datasets
+1. CatBoost was tuned using:
+- iterations = 3000
+- learning_rate = 0.03
+- depth = 8
+- early stopping
 
 2. LightGBM Regressor
 - Fast training and efficient boosting
@@ -94,9 +104,9 @@ Instead of using a single model, predictions from all three models were combined
 robustness and overall prediction quality.
 
 Ensemble Weights:
-- CatBoost: 45%
-- LightGBM: 35%
-- XGBoost: 20%
+- CatBoost: 60%
+- LightGBM: 25%
+- XGBoost: 15%
 
 Evaluation Metric:
 The official evaluation metric provided in the hackathon was:
