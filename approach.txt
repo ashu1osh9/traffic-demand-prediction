@@ -132,7 +132,3 @@ Files Submitted:
 - submission.csv
 - approach.txt
 
-Conclusion:
-The final ensemble solution successfully captured temporal, geographical, and environmental traffic patterns. Advanced 
-feature engineering combined with ensemble learning significantly improved prediction accuracy and produced a strong 
-validation score for the hackathon leaderboard.
